@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Jekyll Action
-        uses: helaili/jekyll-action@2.0.4
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+          ruby-version: 2.7
+      - name: Jekyll Action Install
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+      - uses: peaceiris/actions-gh-pages@v3
+          github_token: ${{ secrets.JEKYLL_PAT }}
+          publish_branch: gh_pages
