@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem "jekyll", '~> 4.1.1'
+gem 'minima'
 
 group :jekyll_plugins do
   gem 'jekyll-avatar'
