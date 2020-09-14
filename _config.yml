@@ -1,0 +1,35 @@
+title: TreyRuffy
+description: "The website for TreyRuffy"
+show_downloads: false
+author: TreyRuffy
+google_analytics:
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-avatar
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-feed
+  - tzinfo
+exclude:
+  - jekyll-theme-cayman.gemspec
+  - Gemfile
+  - Gemfile.lock
+include:
+  - .htaccess
+twitter:
+  username: TreyRuffy
+  card: summary
+logo: /TreyRuffy.png
+social:
+  name: TreyRuffy
+  links:
+    - https://twitter.com/TreyRuffy
+    - https://github.com/TreyRuffy
+    - https://www.spigotmc.org/members/treyruffy.31262/
+github:
+  repository_url: https://github.com/TreyRuffy/treyruffy.github.io
+  repository_name: treyruffy.github.io
+  owner_url: https://github.com/TreyRuffy
+  owner_name: TreyRuffy
+  is_project_page: true
