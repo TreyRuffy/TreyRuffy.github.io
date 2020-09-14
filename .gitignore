@@ -4,3 +4,5 @@ _site
 .idea
 .jekyll-metadata
 .jekyll-cache
+.bundle
+Gemfile.lock
