@@ -9,17 +9,22 @@ on:
 
 jobs:
   github-pages:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
+
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
-      - name: Jekyll Action Install
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.JEKYLL_PAT }}
-          publish_branch: gh_pages
+          ruby-version: 2.6
+
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+      - uses: helaili/jekyll-action@2.0.4
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
